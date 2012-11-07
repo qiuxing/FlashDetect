@@ -1,10 +1,11 @@
-Package: flash
+Package: FlashDetect
 Type: Package
-Title: What the package does (short line)
+Title: An R package to detect flashing-like features from videos by using nonparametric statistics.
 Version: 0.1.5
 Date: 2011-12-06
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Xing Qiu
+Maintainer: Xing Qiu <xqiu@bst.rochester.edu>
+Description: An R package to detect flashing-like features from videos by using nonparametric statistics.
+Depends: R (>= 2.9.0)
+License: GPL (>=2)
 LazyLoad: yes
