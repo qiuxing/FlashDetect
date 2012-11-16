@@ -9,7 +9,7 @@
   region) by applying the Nadaray-Watson kernel regression estimate. 
 }
 \usage{
-TempSmooth(preproc,mask,bandwidth,method=c("interval","circular"), ...)
+TempSmooth(preproc,mask,bandwidth,method=c("circular","interval"), ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,7 +28,7 @@ TempSmooth(preproc,mask,bandwidth,method=c("interval","circular"), ...)
   \item{method}{
        the method to be used. \code{interval} simply applies
        \code{ksmooth}function in R and \code{circular} applies Gauss
-       filter in a circular manner. 
+       filter in a circular manner. Default: circular.
 }
  
 \item{\dots}{

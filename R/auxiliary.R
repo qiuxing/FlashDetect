@@ -44,10 +44,10 @@ fastperm3.C <- function(X,bandwidth){
   t.min <- rep(0,B^2);t.max <- rep(0,B^2)
   t.min=.C("fastperm3",as.double(Xt0),as.double(Xt1),as.double(Xt2),
      as.double(Xtildeperm), as.integer(B),as.integer(N),as.integer(L),
-     maxvec=as.double(t.max),minvec=as.double(t.min),PACKAGE="flash")$minvec
+     maxvec=as.double(t.max),minvec=as.double(t.min),PACKAGE="FlashDetect")$minvec
   t.max=.C("fastperm3",as.double(Xt0),as.double(Xt1),as.double(Xt2),
      as.double(Xtildeperm), as.integer(B),as.integer(N),as.integer(L),
-     maxvec=as.double(t.max),minvec=as.double(t.min),PACKAGE="flash")$maxvec
+     maxvec=as.double(t.max),minvec=as.double(t.min),PACKAGE="FlashDetect")$maxvec
   return(list(t.min,t.max))
 }
 
@@ -79,7 +79,7 @@ rev.rank <- function(x, x.perm) {
   rv <- rep(-1,length(x))
   z <- .C("vec_rev_rank", as.double(x[o]), as.double(y),
           as.integer(length(x)), as.integer(length(y)),
-          rv=as.integer(rv), PACKAGE = "flash")
+          rv=as.integer(rv), PACKAGE = "FlashDetect")
   return(z$rv[ro])
 }
 

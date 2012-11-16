@@ -1,16 +1,16 @@
-\name{flash-package}
-\alias{flash-package}
-\alias{flash}
+\name{FlashDetect-package}
+\alias{FlashDetect-package}
+\alias{FlashDetect}
 \docType{package}
 \title{
-Preprocess pictures and then do inference to detect flash area
+Preprocess pictures and then do inference to detect flashing area
 }
 \description{
 Haven't done yet. Wait for updated
 }
 \details{
 \tabular{ll}{
-Package: \tab flash\cr
+Package: \tab FlashDetect\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2011-11-27\cr
