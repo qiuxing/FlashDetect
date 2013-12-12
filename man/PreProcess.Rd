@@ -8,18 +8,19 @@
    Perform background filtration, spacial smoothing on a 3-D array
 }
 \usage{
-PreProcess(mydata, default.val = 0, ...)
+PreProcess(mydata, spatial.smooth=TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mydata}{
        The 3D array that is to be processed.
 }
-  \item{default.val}{
-       NA consider get rid of this
+  \item{spatial.smooth}{
+    If true (default), conduct spatial (image) smoothing for each time
+    point by calling function \code{image.smooth()} from the package \code{fields}.  Note that this step does not imply temporal smoothing.
 }
   \item{\dots}{
-       Other ... consider get rid of this
+    Additional parameters passing to the \code{image.smoothing()} function.
 }
 }
 \details{

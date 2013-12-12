@@ -6,6 +6,6 @@ Date: 2011-12-06
 Author: Xing Qiu
 Maintainer: Xing Qiu <xqiu@bst.rochester.edu>
 Description: An R package to detect flashing-like features from videos by using nonparametric statistics.
-Depends: R (>= 2.9.0)
+Depends: R (>= 2.9.0), fields
 License: GPL (>=2)
 LazyLoad: yes

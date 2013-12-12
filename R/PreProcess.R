@@ -1,5 +1,5 @@
 PreProcess <-
-function(mydata,default.val=0,...){
+function(mydata,spatial.smooth=TRUE, ...){
   Timenames<-dimnames(mydata)[[3]]
   nrows<-dim(mydata)[1];ncols<-dim(mydata)[2];TimeLen<-dim(mydata)[3];Time<-1:TimeLen
   mydata.norm <- array(0,c(nrows,ncols,TimeLen));preproc <- array(0,c(nrows,ncols,TimeLen))
@@ -31,18 +31,14 @@ function(mydata,default.val=0,...){
 
 
   ##  smoothing
-  for (tt in 1:TimeLen){                       
-    preproc[,,tt] <- image.smooth(mydata.norm[,,tt])$z
-  } 
-   
-#  preproc <- replace(preproc,nonmito.ind.array,default.val)  
-     
-#  if (skip.first){
-#    preproc<-preproc[,,-1]
-#    dimnames(preproc)[[3]]<-Timenames[-1]} else {
-#       preproc<-preproc
-#       dimnames(preproc)[[3]]<-Timenames}
-   dimnames(preproc)[[3]]<-Timenames
+  if (spatial.smooth) {
+      for (tt in 1:TimeLen){                       
+          preproc[,,tt] <- image.smooth(mydata.norm[,,tt], ...)$z
+      }
+  } else {
+      preproc <- mydata.norm
+  }
+  dimnames(preproc)[[3]]<-Timenames
   return(list(preproc=preproc,mask=nonmito.ind.array))
 }
 
